@@ -121,13 +121,13 @@ h2 { display: flex; align-items: center; gap: 9px; margin-bottom: 0; font-family
 .section-count { display: inline-grid; min-width: 21px; height: 19px; place-items: center; border-radius: 4px; background: #e9eee9; color: #65736a; font-family: "DM Sans", sans-serif; font-size: 9px; font-weight: 700; }
 .poll-status { display: inline-flex; align-items: center; gap: 7px; padding-bottom: 2px; color: #77827b; font-size: 10px; }
 .poll-status .live-dot { background: #70a980; box-shadow: 0 0 0 3px rgb(112 169 128 / 12%); }
-.presence-alert { display: flex; min-height: 62px; align-items: center; gap: 12px; margin-bottom: 14px; padding: 11px 15px; border: 1px solid #e9b6a9; border-left: 3px solid #c75b45; border-radius: 6px; background: #fff6f2; color: #833b2e; animation: alert-in 260ms ease both; }
-.alert-icon { display: grid; width: 34px; height: 34px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f8e5de; color: #b44c39; }
-.presence-alert > span:nth-child(2) { display: grid; min-width: 0; gap: 3px; }
-.presence-alert strong { font-size: 11px; font-weight: 700; }
-.presence-alert small { color: #9a6256; font-size: 10px; line-height: 1.45; }
-.alert-live { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 7px; margin-left: auto; color: #a54e3e; font-size: 8px; font-weight: 700; letter-spacing: .7px; }
-.alert-live .live-dot { width: 6px; height: 6px; margin: 0; background: #cb614a; box-shadow: 0 0 0 3px rgb(203 97 74 / 13%); }
+.presence-alert { display: flex; min-height: 88px; align-items: center; gap: 17px; margin-bottom: 16px; padding: 17px 20px; border: 1px solid #e7a697; border-left: 5px solid #c74735; border-radius: 7px; background: linear-gradient(105deg, #fff0eb 0%, #fff9f6 68%, #fff3ee 100%); color: #753126; box-shadow: 0 8px 24px rgb(163 65 48 / 10%); animation: alert-in 260ms ease both; }
+.alert-icon { display: grid; width: 48px; height: 48px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #f7d9d0; color: #ad3d2e; }
+.presence-alert > span:nth-child(2) { display: grid; min-width: 0; gap: 5px; }
+.presence-alert strong { font-size: 23px; font-weight: 800; line-height: 0.7; }
+.presence-alert small { color: #8f5147; font-size: 13px; line-height: 1.5; }
+.alert-live { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; margin-left: auto; padding: 8px 11px; border: 1px solid #a9372b; border-radius: 4px; background: #af6d66; color: #ffe5e5; font-size: 13px; font-weight: 800; letter-spacing: .8px; animation: alert-badge-pulse 0.8s ease-in-out infinite; }
+.alert-live .live-dot { width: 6px; height: 6px; margin: 0; background: #fff; box-shadow: 0 0 0 3px rgb(255 255 255 / 20%); }
 .sensor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .sensor-card { min-width: 0; padding: 17px 18px 0; border: 1px solid #cddfcf; border-radius: 7px; background: linear-gradient(145deg, #fff 0%, #f8fcf8 100%); box-shadow: 0 12px 25px rgb(29 83 47 / 13%), 0 3px 7px rgb(29 61 42 / 7%), 0 0 18px rgb(79 145 88 / 10%); transform: perspective(1000px) rotateX(.8deg) translateY(-1px); transform-style: preserve-3d; transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease; }
 .sensor-card:hover { transform: perspective(850px) rotateX(2deg) translateY(-5px) translateZ(4px); border-color: #a7c7ac; box-shadow: 0 17px 30px rgb(29 83 47 / 18%), 0 5px 10px rgb(29 61 42 / 8%), 0 0 23px rgb(79 145 88 / 16%); }
@@ -170,6 +170,7 @@ h2 { display: flex; align-items: center; gap: 9px; margin-bottom: 0; font-family
 @keyframes rise-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes signal-pulse { 50% { box-shadow: 0 0 0 4px rgb(183 73 59 / 13%); } }
 @keyframes alert-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes alert-badge-pulse { 50% { background: #8f2d25; box-shadow: 0 0 0 4px rgb(184 67 54 / 20%); } }
 @keyframes detected-glow { 50% { box-shadow: 0 0 0 1px rgb(196 91 69 / 14%), 0 10px 28px rgb(177 79 57 / 19%), 0 0 18px rgb(220 128 101 / 10%); } }
 @keyframes detected-icon-glow { 50% { box-shadow: 0 0 0 2px rgb(183 73 59 / 12%), 0 0 26px rgb(206 82 61 / 42%); } }
 
@@ -222,9 +223,11 @@ h2 { display: flex; align-items: center; gap: 9px; margin-bottom: 0; font-family
   .sensor-section { padding-top: 29px; }
   .section-heading { align-items: flex-start; }
   .poll-status { max-width: 120px; justify-content: flex-end; padding-top: 15px; font-size: 9px; text-align: right; }
-  .presence-alert { align-items: flex-start; gap: 9px; padding: 10px; }
-  .alert-icon { width: 30px; height: 30px; }
-  .alert-live { align-self: center; font-size: 0; }
+  .presence-alert { align-items: flex-start; gap: 10px; padding: 12px; }
+  .alert-icon { width: 36px; height: 36px; }
+  .presence-alert strong { font-size: 16px; }
+  .presence-alert small { font-size: 11px; }
+  .alert-live { align-self: center; gap: 6px; padding: 7px; font-size: 10px; }
   .presence-elephant { width: 42px; height: 38px; }
   .sensor-grid { grid-template-columns: 1fr; gap: 10px; }
   .sensor-card { padding-right: 14px; padding-left: 14px; }

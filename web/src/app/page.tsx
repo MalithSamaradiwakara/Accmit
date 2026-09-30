@@ -187,7 +187,7 @@ export default function Home() {
 
           {detectedSensors.length > 0 && (
             <div className="presence-alert" role="alert">
-              <span className="alert-icon"><AlertTriangle size={18} /></span>
+              <span className="alert-icon"><AlertTriangle size={35} /></span>
               <span><strong>Elephant presence detected</strong><small>{detectedSensors.map((sensor) => sensor.name).join(" and ")} {detectedSensors.length === 1 ? "is" : "are"} reporting a positive signal.</small></span>
               <span className="alert-live"><span className="live-dot" /> LIVE ALERT</span>
             </div>
